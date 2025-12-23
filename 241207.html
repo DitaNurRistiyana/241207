@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Boyfriend's Birthday</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #060606, #0c3780);
+        }
+
+        /* PAGE SYSTEM */
+        .page {
+            display: none;
+            min-height: 100vh;
+            padding: 25px;
+        }
+
+        .active {
+            display: block
+        }
+
+        /* CARD */
+        .card {
+            max-width: 420px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
+            animation: fade .4s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+                transform: translateY(10px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        /* LOCK */
+        .lock input {
+            width: 100%;
+            padding: 15px;
+            font-size: 24px;
+            text-align: center;
+            letter-spacing: 10px;
+            border-radius: 15px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 20px;
+            background: #131188;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .menu button {
+            background: #8d9fee;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* GALLERY */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 15px;
+            cursor: pointer;
+            object-fit: cover;
+        }
+
+        /* BACK */
+        .back {
+            background: #382d99;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- LOCK -->
+    <div id="lock" class="page active">
+        <div class="card lock">
+            <h2 style="text-align:center">🔐 Private Birthday</h2>
+            <p style="text-align:center">hihi coba tebak passwordnya, l bet u know!!</p>
+            <input type="password" id="pin" maxlength="10" inputmode="numeric">
+            <button onclick="unlock()">Open </button>
+            <p id="error" style="color:red;text-align:center"></p>
+        </div>
+    </div>
+
+    <!-- MENU -->
+    <div id="menu" class="page">
+        <div class="card menu">
+            <h2 style="text-align:center">🎉 It's you special day🎉</h2>
+            <button onclick="openPage(1)">🤍 </button>
+            <button onclick="openPage(2)">📸 </button>
+            <button onclick="openPage(3)">🎶 </button>
+            <button onclick="openPage(4)">💌 </button>
+            <button onclick="openPage(5)">🎁 </button>
+        </div>
+    </div>
+
+    <!-- SURAT -->
+    <div id="p1" class="page">
+        <div class="card">
+            <p>
+                Hallo Sayangkuu!!🤍🤍🤍
+                Hari ini adalah momen yang penuh arti buat kamu...
+                Semoga hal baik selalu beriringan datang ke kamu ya sayang, semoga semesta senantiasa
+                selalu berpihak ke kamuu, semoga jalan untuk mencapai masa depan yang cerah selalu dipermudahkan,
+                teruslah tumbuh seperti cowoku yang aku kenal!!
+                yang selalu bertanggung jawab, baik hati, penyabar(dikit si apalgi kadang' juga), emosian, gampang bm,
+                ngeselinnnnnn, ga peka, banya cewe!! dll
+                Semoga Perjalanan hidup kamu selalu dipenuhi kebahagiaan dan
+                cintaa. Maafin ya sayang belum bisa merayakan langsung sama kamuu, maaf aku juga belum bisa ngasih
+                yang terbaik
+                buat kamu yaw..aku juga belum bisa jadi seseorang yang terbaik buat kamuu xixi (tapi aku udah berusaha
+                hehe), i hopee..aku bakalan selalu bisa nemenin kamu ditahun tahun berikutnya yaa, aku bakal tetap ada
+                disamping kamu
+                biar walaupun kitee virtual biar kamu ga selalu kesepian ataupun ngerasa sendirian yaa(eh tapikan kmu
+                bnya cewe) eh tapi nanti klo ada cinderella yang deketin kamu , bilang aja kalo kamu udah punya nenek
+                sishir!! Semoga hati kamu tetep untukku walaupun pertengkaran itu bakal selalu ada....
+                Hmm aku bakal tetap milih kamu saat dunia tidak memihak ke kamuu sayangg, aku bakal selalu nemenin
+                setiap
+                langkah yang akan kamu ambil.
+                Aku pengan kalau kamu ada apa' ataupun butuh sesuatu jangan sungkan buat minta bantuan ke aku
+                , kalaupun kamu mau ceritaiin hari kamu ke aku ceritaiin aja yaa.. aku gapeduli ntah itu nanti kita
+                masih punya hubungan ataupun engga ada, aku bakal tetap peduli sama kamu yaaa....
+                i will always support u
+            </p>
+
+            <button class="back" onclick="goMenu()">⬅ Kembali</button>
+        </div>
+    </div>
+
+    <!-- PLAYLIST -->
+
+    <div id="p3" class="page">
+        <div class="card">
+            <h3>🎶 Lagu buat kamu</h3>
+            <ul style="list-style:none;padding:0">
+                <li>🎧 <a href="https://www.youtube.com/watch?v=2Vv-BfVoq4g" target="_blank">
+                        Perfect – Ed Sheeran</a></li>
+
+                <li>🎧 <a href="https://www.youtube.com/watch?v=yKNxeF4KMsY" target="_blank">
+                        Yellow – Coldplay</a></li>
+
+                <li>🎧 <a href="https://www.youtube.com/watch?v=GxldQ9eX2wo" target="_blank">
+                        Until I Found You – Stephen Sanchez</a></li>
+
+                <li>🎧 <a href="https://www.youtube.com/watch?v=tGv7CUutzqU" target="_blank">
+                        About You – The 1975</a></li>
+            </ul>
+
+            <button class="back" onclick="goMenu()">⬅ Kembali</button>
+        </div>
+    </div>
+
+
+    <!-- KENANGAN -->
+    <div id="p2" class="page">
+        <div class="card">
+            <div class="gallery">
+                <img src="1.jpeg" onclick="zoom(this)">
+                <img src="3.jpeg" onclick="zoom(this)">
+                <img src="222.jpeg" onclick="zoom(this)">
+                <img src="12.jpeg" onclick="zoom(this)">
+                <img src="18.jpeg" onclick="zoom(this)">
+                <img src="14.jpeg" onclick="zoom(this)">
+                <img src="15.jpeg" onclick="zoom(this)">
+                <img src="16.jpeg" onclick="zoom(this)">
+                <img src="17.jpeg" onclick="zoom(this)">
+                <img src="13.jpeg" onclick="zoom(this)">
+                <img src="19.jpeg" onclick="zoom(this)">
+                <img src="20.jpeg" onclick="zoom(this)">
+
+            </div>
+            <p style="margin-top:15px">
+                Ini semua foto cowo yang lagi bertambah umur dan berkurangnya usia dan yang paling tampan
+                seduniaaaa ily✨
+            </p>
+            <button class="back" onclick="goMenu()">⬅ Kembali</button>
+        </div>
+    </div>
+
+    <!-- HARAPAN -->
+    <div id="p4" class="page">
+        <div class="card">
+
+            <p>kalau ditanya 'bahagia ga sama yang serang?' of course! bahagiaa bangettt
+                dan bersyukur banget, aku balik ke kamu dengan versi diri kamu yang lebih baik bahkan terbaik..
+                kamu ga pernah nuntut aku apapun itu, udah tau baik buruknya aku, udah tau sifat aku kaya apa,
+                udah tau tingkahku kaya apa apalagi alay jametku udah ditahu semua tapi kenapa kmu tydak ilfil sama aku?
+                sangat sangat berlawanan dari apa yang aku pikirin
+                karna ya tau sendirilah ya aku tu selalu punya pikiran kalo kamu tau aku kaya gini apa kamu bakal
+                ninggalin atau ilfil atau jijik dll. Tapi kamu malah nerima itu semua
+                dari kekurangnku huft tapiii kamu punya sabar yang seluas samuderaaa because ga semua orang bisa punya
+                pribadi inputi'm so lucky to have you babe 🤍
+            </p>
+            <button class="back" onclick="goMenu()">⬅ Kembali</button>
+        </div>
+    </div>
+
+    <!-- PAGE 5 SURPRISE -->
+
+    <!-- SURPRISE -->
+    <div id="p5" class="page">
+        <div class="card" style="text-align:center">
+
+            <h3 id="teaser" onclick="openSurprise()" style="cursor:pointer;color:#131188">
+                🎁 Klik kalau penasaran...
+            </h3>
+
+            <div id="surpriseContent" style="display:none">
+                <h3>💖 Surprise for you</h3>
+                <p>
+                    Terima kasih sudah hadir di hidup aku.
+                    Kamu lebih berharga dari yang kamu kira 🤍
+                </p>
+            </div>
+
+            <button class="back" onclick="goMenu()">⬅ Kembali</button>
+        </div>
+    </div>
+
+    <script>
+        const PASSWORD = "24122007";
+
+        function unlock() {
+            if (document.getElementById("pin").value === PASSWORD) {
+                show("menu");
+            } else {
+                document.getElementById("error").innerText = "password salah 😭";
+            }
+        }
+        function show(id) {
+            document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+            document.getElementById(id).classList.add("active");
+        }
+        function openPage(n) { show("p" + n) }
+        function goMenu() { show("menu") }
+        function openSurprise() {
+            document.getElementById("teaser").style.display = "none";
+            document.getElementById("surpriseContent").style.display = "block";
+        }
+        function zoom(img) {
+            const w = window.open("");
+            w.document.write(`
+<style>
+body{margin:0;background:black;display:flex;align-items:center;justify-content:center}
+img{max-width:100%;max-height:100%}
+</style>
+<img src="${img.src}">
+`);
+        }
+    </script>
+
+</body>
+
+</html>
